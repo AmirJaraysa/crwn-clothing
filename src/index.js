@@ -8,7 +8,7 @@ import { stripePromise } from "./utils/stripe/stripe.utils";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { store, persistor } from "./store/store";
-import "./index.scss";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const rootElement = document.getElementById("root");
 
@@ -25,6 +25,8 @@ createRoot(rootElement).render(
     </Provider>
   </React.StrictMode>
 );
+
+serviceWorkerRegistration.register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
